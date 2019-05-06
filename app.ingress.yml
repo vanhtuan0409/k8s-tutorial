@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: app-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+ rules:
+ - host: redis.app.local
+   http:
+     paths:
+     - path: /
+       backend:
+         serviceName: redis-app
+         servicePort: 80
