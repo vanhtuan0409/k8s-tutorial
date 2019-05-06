@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: redis-app
+  labels:
+    app: redis-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: redis-app
+  template:
+    metadata:
+      labels:
+        app: redis-app
+    spec:
+      containers:
+      - name: app
+        image: vanhtuan/redis-app
+        env:
+          - name: PORT
+            value: "3000"
+          - name: REDIS_HOST
+            value: "redis.default.svc.cluster.local"
+          - name: REDIS_PORT
+            value: "6379"
+        ports:
+        - containerPort: 3000
