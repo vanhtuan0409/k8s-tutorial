@@ -1,5 +1,7 @@
 # K8s Tutorial
 
+Presentation slide: https://docs.google.com/presentation/d/1UmwDrVMzf5PwmxFb1KgQT-W1ZYy2WKoopBpWZRNm-rk/
+
 ### Prerequisites
 Please install the following software beforehand:
 - [Kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
