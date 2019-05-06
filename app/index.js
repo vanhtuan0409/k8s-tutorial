@@ -8,6 +8,10 @@ const rClient = redis.createClient(
   process.env.REDIS_PORT || 6379,
   process.env.REDIS_HOST || "localhost"
 );
+rClient.on('error', function(err) {
+  const msg = err.toString()
+  console.log(`Redis error. ERR: ${msg}`)
+});
 
 const app = express();
 const port = process.env.PORT || 3000;
