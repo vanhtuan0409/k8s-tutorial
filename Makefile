@@ -1,2 +1,2 @@
-redis-forward:
-	kubectl port-forward service/redis 6379
+start-tunnel:
+	minikube tunnel
