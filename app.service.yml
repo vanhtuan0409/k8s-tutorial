@@ -3,8 +3,8 @@ apiVersion: v1
 metadata:
   name: redis-app
 spec:
-  type: LoadBalancer
-  # type: ClusterIP
+  # type: LoadBalancer
+  type: ClusterIP
   selector:
     app: redis-app
   ports:
